@@ -1,3 +1,35 @@
 <?php
+//Maak db connectie
+require_once 'config/config.php';
+require_once 'config/dbconnect.php';
+//Include de views
 include 'views/head.php';
-include 'views/agenda.php';
+include 'views/header.php';
+// require 'models/select_events.php';
+// include 'views/agenda.php';
+//Maak de variabelen
+$action = (empty($_GET['action'])) ? '' : $_GET['action'];
+switch ($action) {
+	case 'register_form':
+		include 'views/register_form.php';
+		break;
+	case 'register':
+		include 'models/register.php';
+		break;
+	case 'login_form':
+		include 'views/login_form.php';
+		break;
+	case 'login':
+		include 'models/login.php';
+		break;
+	case 'account':
+		include 'views/account.php';
+		break;
+	case 'home':
+		include 'views/home.php';
+		break;
+	default:
+		include 'views/agenda.php';
+		break;
+}
+include 'views/footer.php';
