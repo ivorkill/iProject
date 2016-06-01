@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Maak db connectie
 require_once 'config/config.php';
 require_once 'config/dbconnect.php';
@@ -27,6 +28,9 @@ switch ($action) {
 		break;
 	case 'home':
 		include 'views/home.php';
+		break;
+	case 'logout':
+		include 'models/logout.php';
 		break;
 	default:
 		include 'views/agenda.php';

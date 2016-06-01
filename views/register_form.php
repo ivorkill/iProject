@@ -1,8 +1,7 @@
 <?php
-session_start();
 if(isset($_SESSION['user'])!="")
 {
-	header("Location: account.php");
+	header("Location: ?action=account");
 }
 ?>
 <form method="post" action="?action=register">
