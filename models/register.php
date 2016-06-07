@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
 ?>
     <script>alert('successfully registered');</script>
     <?php
-    header("Location: ?action=account");
+    header("Location: ?action=home");
 	}
 	else
 	{

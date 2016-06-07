@@ -9,6 +9,9 @@ include 'views/header.php';
 // require 'models/select_events.php';
 // include 'views/agenda.php';
 //Maak de variabelen
+/* date settings */
+$month = ($_GET['month'] ? $_GET['month'] : date('m'));
+$year = ($_GET['year'] ? $_GET['year'] : date('Y'));
 $action = (empty($_GET['action'])) ? '' : $_GET['action'];
 switch ($action) {
 	case 'register_form':
@@ -32,8 +35,12 @@ switch ($action) {
 	case 'logout':
 		include 'models/logout.php';
 		break;
-	default:
+	case 'agenda':
+		require 'models/select_events.php';
 		include 'views/agenda.php';
+		break;
+	default:
+		include 'views/home.php';
 		break;
 }
 include 'views/footer.php';

@@ -1,16 +1,13 @@
 <?php
-	$list = array();
-	$sql = "SELECT * FROM events";
-	$result = $mysqli->query($sql);
-	while ($events = $result->fetch_assoc()){
-    	$list[] = $events;
-    }
-    return $list;
+if(isset($_SESSION['user'])!="")
+{
+  $events = array();
+  $query = "SELECT event, DATE_FORMAT(start_day,'%Y-%m-%D') AS start_day FROM events WHERE start_day LIKE '$year-$month%'";
+  var_dump($query);
+  $result = $mysqli->query($query) or die('cannot get results!');
+  while($row = $mysqli->fetch_assoc($result)){
+  	$events[$row['start_day']][] = $row;
+  }
 
-    var_dump($sql);
-    echo $list;
-	var_dump($result);
-		if (false === $result) {
-	 echo mysql_error();
-	}
+}
 ?>
