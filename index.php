@@ -5,13 +5,11 @@ require_once 'config/config.php';
 require_once 'config/dbconnect.php';
 //Include de views
 include 'views/head.php';
-include 'views/header.php';
-// require 'models/select_events.php';
-// include 'views/agenda.php';
+// include 'views/header.php';
 //Maak de variabelen
 /* date settings */
-$month = ($_GET['month'] ? $_GET['month'] : date('m'));
-$year = ($_GET['year'] ? $_GET['year'] : date('Y'));
+$month = (empty($_GET['month'])) ? '' : $_GET['month'];
+$year = (empty($_GET['year'])) ? '' : $_GET['year'];
 $action = (empty($_GET['action'])) ? '' : $_GET['action'];
 switch ($action) {
 	case 'register_form':

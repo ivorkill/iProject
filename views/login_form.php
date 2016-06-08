@@ -6,7 +6,7 @@
 		<input type="text" class="form-control" name="username" placeholder="Your Username..." id="username" required autofocus data-validation-required-message="Please enter your username.">
 		<p class="help-block text-danger"></p>
 		<label>Password:</label>
-		<input type="password" class="form-control" name="password" placeholder="Your Password..." id="password" required autofocus data-validation-required-message="Please enter your password.">
+		<input type="password" class="form-control" name="password" placeholder="Your Password..." id="password" required data-validation-required-message="Please enter your password.">
 		<div id="success"></div>
 		<div class="row">
 				<div class="form-group col-xs-12">

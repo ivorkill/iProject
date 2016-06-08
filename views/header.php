@@ -12,22 +12,22 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="hidden"><a href="?action=home">Home</a></li>
-					<?php
-					if(isset($_SESSION['user']))
-					{
-					?>
-					<li class="page-scroll"><a href="?action=agenda">Agenda</a></li>
-					<li class="page-scroll"><a href="?action=logout">Logout</a></li>
-					<li class="page-scroll"><a href="?action=account">Account</a></li>
-					<?php
-					}
-					else{
-					?>
-						<li class="page-scroll"><a href="?action=register_form">Register</a></li>
-						<li class="page-scroll"><a href="?action=login_form">Login</a></li>
-					<?php
-					}
-					?>
+			<?php
+			if(isset($_SESSION['user']))
+			{
+			?>
+				<li class="page-scroll"><a href="?action=agenda">Agenda</a></li>
+				<li class="page-scroll"><a href="?action=logout">Logout</a></li>
+				<li class="page-scroll"><a href="?action=account">Account</a></li>
+			<?php
+			}
+			else{
+			?>
+				<li class="page-scroll"><a href="?action=register_form">Register</a></li>
+				<li class="page-scroll"><a href="?action=login_form">Login</a></li>
+			<?php
+			}
+			?>
       </ul>
     </div>
   </div>
