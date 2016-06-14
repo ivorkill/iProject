@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 {
 	$username =$mysqli->real_escape_string($_POST['username']);
 	$email = $mysqli->real_escape_string($_POST['email']);
-	$password = md5($mysqli->real_escape_string($_POST['password']));
+	$password = hash('sha512', $mysqli->real_escape_string($_POST['password']));
 	$firstname = $mysqli->real_escape_string($_POST['firstname']);
 	$lastname = $mysqli->real_escape_string($_POST['lastname']);
 

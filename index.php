@@ -1,15 +1,13 @@
 <?php
 session_start();
+ob_start();
 //Maak db connectie
 require_once 'config/config.php';
 require_once 'config/dbconnect.php';
 //Include de views
 include 'views/head.php';
-// include 'views/header.php';
+include 'views/header.php';
 //Maak de variabelen
-/* date settings */
-$month = (empty($_GET['month'])) ? '' : $_GET['month'];
-$year = (empty($_GET['year'])) ? '' : $_GET['year'];
 $action = (empty($_GET['action'])) ? '' : $_GET['action'];
 switch ($action) {
 	case 'register_form':
@@ -34,7 +32,7 @@ switch ($action) {
 		include 'models/logout.php';
 		break;
 	case 'agenda':
-		require 'models/select_events.php';
+		// require 'models/select_events.php';
 		include 'views/agenda.php';
 		break;
 	default:

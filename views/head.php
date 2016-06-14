@@ -14,12 +14,6 @@
 	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 	<script src="js/jquery.js"></script>
-	<!-- <script src="js/bootstrap.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-	<!-- <script src="js/classie.js"></script> -->
-	<!-- <script src="js/cbpAnimatedHeader.js"></script> -->
-	<script src="js/jqBootstrapValidation.js"></script>
-	<script src="js/freelancer.js"></script> -->
 	<link rel='stylesheet' href='css/fullcalendar.css'/>
 	<script src='js/lib/jquery.min.js'></script>
 	<script src='js/lib/moment.min.js'></script>
@@ -34,7 +28,7 @@
   		var calendar = $('#calendar').fullCalendar({
    		editable: true,
    		header: {
-    		left: 'prev,next today',
+    		left: 'prev,next,today',
     		center: 'title',
     		right: 'month,agendaWeek,agendaDay'
    		},
@@ -54,8 +48,11 @@
    		select: function(start, end, allDay) {
    			var title = prompt('Event Title:');
    			if (title) {
-   				var start = $.fullCalendar.formatDate(start, "yyyy-MM-dd HH:mm:ss");
-   				var end = $.fullCalendar.formatDate(end, "yyyy-MM-dd HH:mm:ss");
+	   			var start = $.fullCalendar.moment(start).format('YYYY/MM/DD/HH');
+   				var end = $.fullCalendar.moment(end).format('YYYY/MM/DD/HH');
+				var dataString = 'title='+ title+'&start='+ start +'&end='+ end; // added
+
+alert(dataString); // added
    				$.ajax({
    					url: 'http://localhost/school/bewijzenmap/jaar_2/periode_4/proj/iProject/models/add_events.php',
    					data: 'title='+ title+'&start='+ start +'&end='+ end ,
@@ -79,8 +76,8 @@
 
    		editable: true,
    		eventDrop: function(event, delta) {
-   			var start = $.fullCalendar.formatDate(event.start, "yyyy-MM-dd HH:mm:ss");
-   			var end = $.fullCalendar.formatDate(event.end, "yyyy-MM-dd HH:mm:ss");
+   			var start = $.fullCalendar.moment(start).format('YYYY/MM/DD/HH');
+   			var end = $.fullCalendar.moment(end).format('YYYY/MM/DD/HH');
    			$.ajax({
    				url: 'http://localhost/school/bewijzenmap/jaar_2/periode_4/proj/iProject/models/update_events.php',
    				data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
@@ -91,8 +88,8 @@
    			});
    		},
    		eventResize: function(event) {
-   			var start = $.fullCalendar.formatDate(event.start, "yyyy-MM-dd HH:mm:ss");
-   			var end = $.fullCalendar.formatDate(event.end, "yyyy-MM-dd HH:mm:ss");
+   			var start = $.fullCalendar.moment(start).format('YYYY/MM/DD/HH');
+   			var end = $.fullCalendar.moment(end).format('YYYY/MM/DD/HH');
    				$.ajax({
     			url: 'http://localhost/school/bewijzenmap/jaar_2/periode_4/proj/iProject/models/update_events.php',
     			data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
@@ -119,4 +116,3 @@
 	</script>
 </head>
 <body id="page-top" class="index">
-<div id="calendar"></div>
