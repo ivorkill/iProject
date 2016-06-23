@@ -12,6 +12,6 @@
 		<input type="text" class="form-control" name="lastname" placeholder="Your Lastname..." id="lastname" required data-validation-required-message="Please enter your lastname.">
 		<label>Email*:</label>
 		<input type="email" class="form-control" name="email" placeholder="Your Email..." id="email" required data-validation-required-message="Please enter your email.">
-		<input type="submit" name="submit" value="Register">
+		<br><input type="submit" name="submit" value="Register">
 	</div>
 </form>

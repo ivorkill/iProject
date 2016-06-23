@@ -1,13 +1,24 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <!-- <span class="sr-only">Toggle navigation</span> -->
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="?action=home">Calendar</a>
+	<div class="container">
+    	<div class="navbar-header page-scroll">
+      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <!-- <span class="sr-only">Toggle navigation</span> -->
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		    </button>
+	  		<?php
+	  		if(isset($_SESSION['user']))
+	  		{
+	  		?>
+      			<a class="navbar-brand" href="?action=account">Calendar</a>
+	  		<?php
+	  		}else{
+			?>
+		  		<a class="navbar-brand" href="?action=home">Calendar</a>
+			<?php
+	  		}
+	  		?>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">

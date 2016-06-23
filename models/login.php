@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION['user'])!="")
+if(isset($_SESSION['id'])!="")
 {
 	header("Location: ?action=account");
 }
@@ -12,7 +12,6 @@ if(isset($_POST['submit']))
 	$result = $mysqli->query($sql);
 	$count = mysqli_num_rows($result);
 	while ($login = $result->fetch_assoc()) {
-		var_dump($login);
 		if($count==1)
 		{
 			$_SESSION['user'] = $login['id'];
@@ -20,7 +19,12 @@ if(isset($_POST['submit']))
 		}
 		else
 		{
-			echo "Failed to Login";
+			header("Location: ?action=login_form");
+			?>
+			<script>
+				windows.alert("Failed to login!");
+			</script>
+			<?php
 		}
 	}
 }

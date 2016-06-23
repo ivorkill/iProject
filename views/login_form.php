@@ -10,7 +10,7 @@
 		<div id="success"></div>
 		<div class="row">
 				<div class="form-group col-xs-12">
-						<input type="submit"  name="submit" value="Login"></input>
+						<br><input type="submit"  name="submit" value="Login"></input>
 				</div>
 		</div>
 	</div>

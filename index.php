@@ -2,7 +2,6 @@
 session_start();
 ob_start();
 //Maak db connectie
-require_once 'config/config.php';
 require_once 'config/dbconnect.php';
 //Include de views
 include 'views/head.php';
@@ -32,7 +31,6 @@ switch ($action) {
 		include 'models/logout.php';
 		break;
 	case 'agenda':
-		// require 'models/select_events.php';
 		include 'views/agenda.php';
 		break;
 	default:

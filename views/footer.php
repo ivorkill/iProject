@@ -1,4 +1,3 @@
-</body>
 <footer>
 	<div class="footer-below">
 		<div class="container">
@@ -10,3 +9,5 @@
 		</div>
 	</div>
 </footer>
+<script src="js/fullcalendar.js"></script>
+</body>
